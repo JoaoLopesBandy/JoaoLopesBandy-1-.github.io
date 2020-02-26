@@ -72,12 +72,12 @@ function renderRectangle(){
   rect(0,0,width/2,height/2);
   
   if(onRight){
-    fill(0,255,200,rightFade);
-    rightFade += FADE_SPEED;
+    fill(0,255,200);
+    rightFade = 100;
   }
   else {
-    rightFade = 0;;
-    fill(100);
+    rightFade -= FADE_SPEED;
+    fill(100,rightFade);
     
   }
   rect(width/2,0,width/2,height/2);
@@ -106,6 +106,11 @@ function draw() {
   updateCurrentSide();
   //print("left:"  + onLeft + "  Right:  " + onRight);
   renderRectangle();
-  
+  // if(quadrant === 1){
+  //   qiFill = 0;
+  // }
+  // else q1Fill += 10;
+
+  // fill(q1Fill);
   
 }
